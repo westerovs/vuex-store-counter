@@ -9,11 +9,11 @@ export default new Vuex.Store({
     counter
   },
   state: {
-    title: 'Hello from store'
+    title: 'this is state '
   },
   getters: {
     title (state) {
-      return state.title + '!!!'
+      return state.title + 'motherfucker!'
     }
   }
 })

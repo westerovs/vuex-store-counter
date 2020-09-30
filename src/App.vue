@@ -6,6 +6,8 @@
     <app-second-counter></app-second-counter>
     <hr>
     <app-actions></app-actions>
+
+    <app-pop-up></app-pop-up>
   </div>
 </template>
 
@@ -13,15 +15,17 @@
   import Counter from './Counter'
   import Actions from './Actions'
   import SecondCounter from './SecondCounter'
+  import PopUp from './PupUp'
 
   export default {
     components: {
       appCounter: Counter,
       appActions: Actions,
-      appSecondCounter: SecondCounter
+      appSecondCounter: SecondCounter,
+      AppPopUp: PopUp
     },
     computed: {
-      title () {
+      title() {
         return this.$store.getters.title
       }
     }
@@ -30,6 +34,7 @@
 
 <style scoped>
   .container {
+    position: relative;
     width: 100vw;
     height: 100vh;
     background: gray;
