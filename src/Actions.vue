@@ -1,7 +1,7 @@
 <template>
     <div>
-      <button class="btn btn-success" @click="updateCounter(1)">Add</button>
-      <button class="btn btn-danger" @click="updateCounter(-1)">Subtract</button>
+      <button @click="updateCounter(+1)" class="btn btn-success">Add</button>
+      <button @click="updateCounter(-1)" class="btn btn-danger">Subtract</button>
     </div>
 </template>
 
@@ -9,11 +9,9 @@
   export default {
     methods: {
       updateCounter(val) {
-        // this.$store.state.counter += val
-        // this.$store.commit('changeCounter', val)
-        this.$store.dispatch('asyncChangeCounter', {
-          counterValue: val,
-          timeoutDelay: 0
+        this.$store.dispatch('asyncCount', {
+          currentVal: val,
+          time: 1000
         })
       }
     }

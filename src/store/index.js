@@ -5,15 +5,24 @@ import counter from './counter'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules: {
-    counter
-  },
   state: {
-    title: 'this is state '
+    counter: 0
+  },
+  mutations: {
+    changeCounter(state, payLoad) {
+      state.counter += payLoad
+    }
   },
   getters: {
-    title (state) {
-      return state.title + 'motherfucker!'
+    computedCounter(state, payLoad) {
+      return state.counter * 10
+    }
+  },
+  actions: {
+    asyncCount(state, payLoad) {
+      setTimeout(() => {
+        state.commit('changeCounter', payLoad.currentVal)
+      }, payLoad.time);
     }
   }
 })
