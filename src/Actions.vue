@@ -1,23 +1,22 @@
 <template>
     <div>
-      <button @click="updateCounter(+1)" class="btn btn-success">Add</button>
-      <button @click="updateCounter(-1)" class="btn btn-danger">Subtract</button>
+        <button @click="updateCounter(+1)" class="btn btn-success">Добавить</button>
+        <button @click="updateCounter(-1)" class="btn btn-danger">Уменьшить</button>
     </div>
 </template>
 
 <script>
-  export default {
+export default {
     methods: {
-      updateCounter(val) {
-        this.$store.dispatch('asyncCount', {
-          currentVal: val,
-          time: 1000
-        })
-      }
-    }
-  }
+        updateCounter(val) {
+            this.$store.dispatch("asyncCount", {
+                currentVal: val,
+                time: 1000,
+            });
+        },
+    },
+};
 </script>
 
 <style scoped>
-
 </style>

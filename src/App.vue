@@ -22,8 +22,8 @@ export default {
 };
 </script>
 
-<style scoped>
-.container {
+<style>
+body {
     position: relative;
     width: 100vw;
     height: 100vh;
